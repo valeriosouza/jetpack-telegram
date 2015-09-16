@@ -39,7 +39,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		if ( wp_is_mobile() ) {
 			if( $this->smart )
 				return sprintf(
-					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s" class="share-telegram %s" title="%s"></a></div>',
+					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20&url=%s?utm_source=share&utm_medium=telegram&utm_campaign=mobile" class="share-telegram %s" title="%s"></a></div>',
 					__('Read this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
@@ -59,7 +59,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 	}
 
 	function process_request( $post, array $post_data ) {
-		$telegram_url = 'tg://msg?text='.rawurlencode(__('Read this','jetpack-telegram').': '.$this->get_share_title( $post->ID ).' - '.$this->get_share_url( $post->ID ) ).'';
+		$telegram_url = 'tg://msg?text='.rawurlencode(__('Read this','jetpack-telegram').': '.$this->get_share_title( $post->ID ).'&url='.$this->get_share_url( $post->ID ) ).'?utm_source=share&utm_medium=telegram&utm_campaign=mobile';
 
 		// Record stats
 		parent::process_request( $post, $post_data );
