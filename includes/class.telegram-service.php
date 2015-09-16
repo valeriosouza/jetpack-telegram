@@ -31,7 +31,7 @@ class jetelegram_Sharing_Service {
 	}
 
 	function add_sharing_services( $services ) {
-		include_once jetelegram__PLUGIN_DIR . 'class.telegram-source.php';
+		include_once jetelegram__PLUGIN_DIR . 'includes/class.telegram-source.php';
 
 		if( !array_key_exists( 'telegram', $services ) ) {
 			$services['telegram'] = 'jetelegram_Share_Telegram';

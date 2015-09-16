@@ -69,19 +69,19 @@ class Jetpack_Telegram_Pack {
 		if( !Jetpack::is_module_active('sharedaddy') ) {
 			return;
 		}
-		wp_enqueue_script( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'count.js', array('jquery','sharing-js'), jetelegram__VERSION, true );
-		wp_enqueue_style( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'style.css', array(), jetelegram__VERSION );
+		wp_enqueue_script( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'assets/js/count.js', array('jquery','sharing-js'), jetelegram__VERSION, true );
+		wp_enqueue_style( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'assets/css/style.css', array(), jetelegram__VERSION );
 	}
 
 	function admin_menu_assets( $hook ) {
 		if( $hook == 'settings_page_sharing' ) {
-			wp_enqueue_style( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'style.css', array('sharing', 'sharing-admin'), jetelegram__VERSION );
+			wp_enqueue_style( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'assets/css/style.css', array('sharing', 'sharing-admin'), jetelegram__VERSION );
 		}
 	}
 
 	function require_services() {
 		if( class_exists('Jetpack') ) {
-			require_once( jetelegram__PLUGIN_DIR . 'class.telegram-service.php' );
+			require_once( jetelegram__PLUGIN_DIR . 'includes/class.telegram-service.php' );
 		}
 	}
 
