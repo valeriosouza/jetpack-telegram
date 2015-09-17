@@ -40,7 +40,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 			if( $this->smart )
 				return sprintf(
 					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s?utm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile" class="share-telegram %s" title="%s"></a></div>',
-					__('Read this','jetpack-telegram'),
+					__('Look this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
 					esc_attr( $locale ),
@@ -59,7 +59,6 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 	}
 
 	function process_request( $post, array $post_data ) {
-		//$telegram_url = 'tg://msg?text='.rawurlencode(__('Read this','jetpack-telegram').': '.$this->get_share_title( $post->ID ).' - '.$this->get_share_url( $post->ID ) ).'%3Futm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile';
 
 		$url = add_query_arg( array(
 		    'utm_source' => 'jetpack-sharing',
@@ -68,11 +67,11 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		), $this->get_share_url( $post->ID ) );
 
 		$params = array(
-		    'text' => __( 'Read this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
+		    'text' => __( 'Look this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
 		    'url'  => $url
 		);
 
-		$telegram_url = 'tg://msg?' . build_query( $params );
+		$telegram_url = 'tg://msg?' . http_build_query( $params, '', '&', PHP_QUERY_RFC1738 );
 
 		// Record stats
 		parent::process_request( $post, $post_data );

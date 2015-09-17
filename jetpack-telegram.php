@@ -23,10 +23,32 @@ if( version_compare( get_bloginfo('version'), '3.8', '<' ) ) {
 	deactivate_plugins( __FILE__ );
 }
 
+add_action( 'admin_init', 'jt_check_dependencies' );
+
+//Check if jetpack is active.
+function jt_check_dependencies() {
+	if ( ! is_plugin_active( 'jetpack/jetpack.php' ) ) {
+		add_action( 'admin_notices', 'jt_dependencies_notice' );
+		deactivate_plugins( __FILE__ );
+
+		//I used it to not appear "plugin active" message! We can discuss a better way to do this.
+		unset( $_GET['activate'] );
+	}
+}
+
+//Show error notice if jetpack is NOT active.
+function jt_dependencies_notice() {
+    ?>
+    <div class="error">
+        <p><strong><?php _e( 'Jetpack has NOT been activated! You need to install and activate Jetpack plugin first.', 'jetpack-telegram' ); ?></strong></p>
+    </div>
+    <?php
+}
+
 define( 'jetelegram__PLUGIN_DIR',  plugin_dir_path( __FILE__ ) );
 define( 'jetelegram__PLUGIN_URL',  plugin_dir_url( __FILE__ ) );
 define( 'jetelegram__PLUGIN_FILE', __FILE__ );
-define( 'jetelegram__VERSION',     '0.1.0' );
+define( 'jetelegram__VERSION',     '1.0.0' );
 
 add_action( 'init', array( 'Jetpack_Telegram_Pack', 'init' ) );
 
