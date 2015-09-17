@@ -59,7 +59,20 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 	}
 
 	function process_request( $post, array $post_data ) {
-		$telegram_url = 'tg://msg?text='.rawurlencode(__('Read this','jetpack-telegram').': '.$this->get_share_title( $post->ID ).' - '.$this->get_share_url( $post->ID ) ).'?utm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile';
+		//$telegram_url = 'tg://msg?text='.rawurlencode(__('Read this','jetpack-telegram').': '.$this->get_share_title( $post->ID ).' - '.$this->get_share_url( $post->ID ) ).'%3Futm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile';
+
+		$url = add_query_arg( array(
+		    'utm_source' => 'jetpack-sharing',
+		    'utm_medium' => 'telegram',
+		    'utm_campaign' => 'mobile'
+		), $this->get_share_url( $post->ID ) );
+
+		$params = array(
+		    'text' => __( 'Read this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
+		    'url'  => $url
+		);
+
+		$telegram_url = 'tg://msg?' . build_query( $params );
 
 		// Record stats
 		parent::process_request( $post, $post_data );

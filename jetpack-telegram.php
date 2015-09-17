@@ -33,7 +33,7 @@ add_action( 'init', array( 'Jetpack_Telegram_Pack', 'init' ) );
 class Jetpack_Telegram_Pack {
 	static $instance;
 
-	
+
 	private $data;
 
 	static function init() {
