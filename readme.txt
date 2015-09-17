@@ -1,7 +1,7 @@
 === Telegram Sharing Button for Jetpack ===
-Contributors: valeriosza
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P5QTGDB64SU8E&lc=US&item_name=WordPress%20Plugins&no_note=0&cn=Adicionar%20instru%c3%a7%c3%b5es%20especiais%20para%20o%20vendedor%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: Jetpack, social, sharing, share, SNS, telegram, WHATSAPP, Jetpack Sharing, Button Telegram, Telegram Button for Jetpack Sharing, Telegram Sharing Button for Jetpack
+Contributors: valeriosza, wordlab
+Donate link: http://wordlab.com.br/donate/
+Tags: Jetpack, social, sharing, share, SNS, telegram, TELEGRAM, Jetpack Sharing, Button Telegram, Telegram Button for Jetpack Sharing, Telegram Sharing Button for Jetpack
 Requires at least: 3.8
 Tested up to: 4.2
 Stable tag: 1.0.0
@@ -19,9 +19,15 @@ Don't forget to install Jetpack, and read [FAQ](https://wordpress.org/plugins/te
 [Jetpack](http://jetpack.me) is awesome! It's used globally. But they can't cover Telegram. 
 This supplies additional Jetpack sharing Telegram Button for your website.
 
+= Heads up: =
+
+Read the [FAQ](https://wordpress.org/plugins/telegram-jetpack-button/faq/) before use.
+
+Want to help? Use the [support](https://wordpress.org/support/plugin/telegram-jetpack-button)
+
 = Want to help? =
 
-If you can translate, help in https://www.transifex.com/projects/p/jetpack-telegram/ in Transifex.
+If you can translate, help in https://www.transifex.com/projects/p/telegram-sharing-button-for-jetpack/ in Transifex.
 
 Known to develop, help in https://github.com/valeriosouza/jetpack-telegram
 
