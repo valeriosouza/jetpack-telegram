@@ -71,7 +71,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		    'url'  => $url
 		);
 
-		$telegram_url = 'tg://msg?' . http_build_query( $params, '', '&', PHP_QUERY_RFC1738 );
+		$telegram_url = 'tg://msg?' . http_build_query( $params );
 
 		// Record stats
 		parent::process_request( $post, $post_data );
