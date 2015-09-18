@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Jetpack Telegram\n"
-"POT-Creation-Date: 2015-09-17 13:27-0300\n"
-"PO-Revision-Date: 2015-09-17 13:28-0300\n"
+"POT-Creation-Date: 2015-09-17 21:47-0300\n"
+"PO-Revision-Date: 2015-09-17 21:47-0300\n"
 "Last-Translator: Valério Souza <eu@valeriosouza.com.br>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_x;_e\n"
@@ -32,10 +32,10 @@ msgstr ""
 
 #: ../jetpack-telegram.php:43
 msgid ""
-"Jetpack has NOT been activated! You need to install and activate Jetpack "
-"plugin first."
+"Jetpack has NOT been activated! You need to install and activate the Jetpack "
+"plugin to work sharing with Telegram."
 msgstr ""
 
-#: ../jetpack-telegram.php:122
+#: ../jetpack-telegram.php:121
 msgid "Donate"
 msgstr ""

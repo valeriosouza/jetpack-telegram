@@ -14,16 +14,16 @@ Add Telegram button to Jetpack Sharing
 
 ### Notice
 
-Don't forget to install Jetpack, and read [FAQ](https://wordpress.org/plugins/telegram-jetpack-button/faq/)!
+Don't forget to install Jetpack, and read [FAQ](https://wordpress.org/plugins/telegram-sharing-button-for-jetpack/faq/)!
 
-[Jetpack](http://jetpack.me) is awesome! It's used globally. But they can't cover Telegram. 
+[Jetpack](http://jetpack.me) is awesome! It's used globally. But they can't cover Telegram.
 This supplies additional Jetpack sharing Telegram Button for your website.
 
 = Heads up: =
 
 Read the [FAQ](https://wordpress.org/plugins/telegram-jetpack-button/faq/) before use.
 
-Want to help? Use the [support](https://wordpress.org/support/plugin/telegram-jetpack-button)
+Want to help? Use the [support](https://wordpress.org/support/plugin/telegram-sharing-button-for-jetpack)
 
 = Want to help? =
 

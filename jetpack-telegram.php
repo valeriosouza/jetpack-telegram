@@ -1,10 +1,10 @@
 <?php
 /*
  * Plugin Name: Telegram Sharing Button for Jetpack
- * Plugin URI: http://wordpress.org/plugins/telegram-jetpack-button/
+ * Plugin URI: http://valeriosouza.com.br/portfolio/telegram-sharing-button-for-jetpack/
  * Description: Add Telegram button to Jetpack Sharing
  * Version: 1.0.0
- * Author: Valerio Souza
+ * Author: Valerio Souza, WordLab Academy
  * Author URI: http://www.valeriosouza.com.br
  * License: GPLv3 or later
  * Text Domain: jetpack-telegram
@@ -40,7 +40,7 @@ function jt_check_dependencies() {
 function jt_dependencies_notice() {
     ?>
     <div class="error">
-        <p><strong><?php _e( 'Jetpack has NOT been activated! You need to install and activate Jetpack plugin first.', 'jetpack-telegram' ); ?></strong></p>
+        <p><strong><?php _e( 'Jetpack has NOT been activated! You need to install and activate the Jetpack plugin to work sharing with Telegram.', 'jetpack-telegram' ); ?></strong></p>
     </div>
     <?php
 }
@@ -54,7 +54,6 @@ add_action( 'init', array( 'Jetpack_Telegram_Pack', 'init' ) );
 
 class Jetpack_Telegram_Pack {
 	static $instance;
-
 
 	private $data;
 
@@ -118,7 +117,7 @@ class Jetpack_Telegram_Pack {
 		if( plugin_basename( jetelegram__PLUGIN_FILE ) === $file ) {
 			$links[] = sprintf(
 				'<a href="%s">%s</a>',
-				esc_url('https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P5QTGDB64SU8E&lc=US&item_name=WordPress%20Plugins&no_note=0&cn=Adicionar%20instru%c3%a7%c3%b5es%20especiais%20para%20o%20vendedor%3a&no_shipping=1&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted'),
+				esc_url('http://wordlab.com.br/donate/'),
 				__( 'Donate', 'jetpack-telegram' )
 			);
 		}
