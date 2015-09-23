@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Jetpack Telegram\n"
-"POT-Creation-Date: 2015-09-17 21:47-0300\n"
-"PO-Revision-Date: 2015-09-17 21:47-0300\n"
+"POT-Creation-Date: 2015-09-22 19:13-0300\n"
+"PO-Revision-Date: 2015-09-22 19:13-0300\n"
 "Last-Translator: Valério Souza <eu@valeriosouza.com.br>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -36,6 +36,10 @@ msgid ""
 "plugin to work sharing with Telegram."
 msgstr ""
 
-#: ../jetpack-telegram.php:121
+#: ../jetpack-telegram.php:122
 msgid "Donate"
+msgstr ""
+
+#: ../jetpack-telegram.php:132
+msgid "More add-ons"
 msgstr ""
