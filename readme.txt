@@ -21,7 +21,7 @@ This supplies additional Jetpack sharing Telegram Button for your website.
 
 = Heads up: =
 
-Read the [FAQ](https://wordpress.org/plugins/telegram-jetpack-button/faq/) before use.
+Read the [FAQ](https://wordpress.org/plugins/telegram-sharing-button-for-jetpack/faq/) before use.
 
 Want to help? Use the [support](https://wordpress.org/support/plugin/telegram-sharing-button-for-jetpack)
 
