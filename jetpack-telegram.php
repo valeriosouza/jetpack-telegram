@@ -3,7 +3,7 @@
  * Plugin Name: Telegram Sharing Button for Jetpack
  * Plugin URI: http://valeriosouza.com.br/portfolio/telegram-sharing-button-for-jetpack/
  * Description: Add Telegram button to Jetpack Sharing
- * Version: 1.0.0
+ * Version: 1.1.1
  * Author: Valerio Souza, WordLab Academy
  * Author URI: http://www.valeriosouza.com.br
  * License: GPLv3 or later
@@ -48,7 +48,7 @@ function jt_dependencies_notice() {
 define( 'jetelegram__PLUGIN_DIR',  plugin_dir_path( __FILE__ ) );
 define( 'jetelegram__PLUGIN_URL',  plugin_dir_url( __FILE__ ) );
 define( 'jetelegram__PLUGIN_FILE', __FILE__ );
-define( 'jetelegram__VERSION',     '1.0.0' );
+define( 'jetelegram__VERSION',     '1.1.1' );
 
 add_action( 'init', array( 'Jetpack_Telegram_Pack', 'init' ) );
 
@@ -73,6 +73,8 @@ class Jetpack_Telegram_Pack {
 	private function __construct() {
 		add_action( 'wp_enqueue_scripts',    array( &$this, 'register_assets' ) );
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_menu_assets' ) );
+		add_action( 'admin_notices', 		 array( &$this, 'plugin_donate_notice' ) );
+		add_action( 'admin_init', 			 array( &$this, 'plugin_donate_ignore' ) );
 
 		if( did_action('plugins_loaded') ) {
 			$this->require_services();
@@ -117,8 +119,8 @@ class Jetpack_Telegram_Pack {
 	function plugin_row_donate( $links, $file ) {
 		if( plugin_basename( jetelegram__PLUGIN_FILE ) === $file ) {
 			$links[] = sprintf(
-				'<a href="%s">%s</a>',
-				esc_url('http://wordlab.com.br/donate/'),
+				'<a href="%s" style="color:#ffa100;font-weight:bold;">%s</a>',
+				esc_url('http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate&utm_campaign=jetpack-telegram'),
 				__( 'Donate', 'jetpack-telegram' )
 			);
 		}
@@ -127,11 +129,33 @@ class Jetpack_Telegram_Pack {
 	function plugin_row_more( $links, $file ) {
 		if( plugin_basename( jetelegram__PLUGIN_FILE ) === $file ) {
 			$links[] = sprintf(
-				'<a target="_blank" href="%s">%s</a>',
-				esc_url('http://valeriosouza.com.br/project-tag/jetpack-addons/'),
+				'<a target="_blank" href="%s" style="color:#ffa100;font-weight:bold;">%s</a>',
+				esc_url('http://valeriosouza.com.br/project-tag/jetpack-addons/?utm_source=plugin&utm_medium=more-addons&utm_campaign=jetpack-telegram'),
 				__( 'More add-ons', 'jetpack-telegram' )
 			);
 		}
 		return $links;
+	}
+
+	/* Display a notice that can be dismissed */
+
+	function plugin_donate_notice() {
+		global $current_user ;
+	        $user_id = $current_user->ID;
+	        /* Check that the user hasn't already clicked to ignore the message */
+		if ( ! get_user_meta($user_id, 'telegram_ignore_notice') ) {
+	        echo '<div class="updated"><p>';
+	        printf(__('Like the plugin to share the Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a <a target="_blank" href="%1$s">donation of any amount</a>. | <a href="%2$s">Hide Notice</a>'), 'http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate-notice&utm_campaign=jetpack-telegram', '?telegram_nag_ignore=0');
+	        echo "</p></div>";
+		}
+	}
+
+	function plugin_donate_ignore() {
+		global $current_user;
+	        $user_id = $current_user->ID;
+	        /* If user clicks to ignore the notice, add that to their user meta */
+	        if ( isset($_GET['telegram_nag_ignore']) && '0' == $_GET['telegram_nag_ignore'] ) {
+	             add_user_meta($user_id, 'telegram_ignore_notice', 'true', true);
+		}
 	}
 }

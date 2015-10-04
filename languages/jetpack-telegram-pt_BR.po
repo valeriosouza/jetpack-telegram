@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Telegram Sharing Button for Jetpack\n"
 "POT-Creation-Date: 2015-09-22 19:13-0300\n"
-"PO-Revision-Date: 2015-09-23 23:49+0000\n"
+"PO-Revision-Date: 2015-09-24 19:47+0000\n"
 "Last-Translator: Valério Souza <valeriosza@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/valeriosouza/telegram-sharing-button-for-jetpack/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "Clique para compartilhar no Telegram"
 msgid ""
 "Jetpack has NOT been activated! You need to install and activate the Jetpack"
 " plugin to work sharing with Telegram."
-msgstr ""
+msgstr "Jetpack não está ativado! Você deve instalar e ativar o plugin Jetpack para conseguir usar o compartilhamento do Telegram"
 
 #: ../jetpack-telegram.php:122
 msgid "Donate"
@@ -44,4 +44,4 @@ msgstr "Doar"
 
 #: ../jetpack-telegram.php:132
 msgid "More add-ons"
-msgstr ""
+msgstr "Outros Add-ons"

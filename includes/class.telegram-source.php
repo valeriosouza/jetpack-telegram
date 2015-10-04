@@ -36,11 +36,10 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 
 	function get_display( $post ) {
 		$locale = $this->guess_locale_from_lang( get_locale() );
-		if ( wp_is_mobile() ) {
 			if( $this->smart )
 				return sprintf(
 					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s?utm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile" class="share-telegram %s" title="%s"></a></div>',
-					__('Look this','jetpack-telegram'),
+					__('Look at this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
 					esc_attr( $locale ),
@@ -48,7 +47,6 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 				);
 			else
 				return $this->get_link( get_permalink( $post->ID ), _x( 'Telegram', 'share to', 'jetpack-telegram' ), __( 'Click to share on Telegram', 'jetpack-telegram' ), 'share=telegram' );
-		}
 	}
 
 	function display_header() {
@@ -67,7 +65,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		), $this->get_share_url( $post->ID ) );
 
 		$params = array(
-		    'text' => __( 'Look this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
+		    'text' => __( 'Look at this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
 		    'url'  => $url
 		);
 
