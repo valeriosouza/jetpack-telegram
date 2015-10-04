@@ -145,7 +145,7 @@ class Jetpack_Telegram_Pack {
 	        /* Check that the user hasn't already clicked to ignore the message */
 		if ( ! get_user_meta($user_id, 'telegram_ignore_notice') ) {
 	        echo '<div class="updated"><p>';
-	        printf(__('Like the plugin to share the Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a <a target="_blank" href="%1$s">donation of any amount</a>. | <a href="%2$s">Hide Notice</a>'), 'http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate-notice&utm_campaign=jetpack-telegram', '?telegram_nag_ignore=0');
+	        printf(__('Like the plugin to share the Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a <a target="_blank" href="%1$s">donation of any amount</a>. | <a href="%2$s">Hide Notice</a>' , 'jetpack-telegram'), 'http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate-notice&utm_campaign=jetpack-telegram', '?telegram_nag_ignore=0');
 	        echo "</p></div>";
 		}
 	}
