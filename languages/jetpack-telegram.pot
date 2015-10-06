@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Jetpack Telegram\n"
-"POT-Creation-Date: 2015-10-04 20:05-0300\n"
-"PO-Revision-Date: 2015-10-04 20:05-0300\n"
+"POT-Creation-Date: 2015-10-05 21:35-0300\n"
+"PO-Revision-Date: 2015-10-05 21:35-0300\n"
 "Last-Translator: Valério Souza <eu@valeriosouza.com.br>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -36,18 +36,24 @@ msgid ""
 "plugin to work sharing with Telegram."
 msgstr ""
 
-#: ../jetpack-telegram.php:124
+#: ../jetpack-telegram.php:131
 msgid "Donate"
 msgstr ""
 
-#: ../jetpack-telegram.php:134
+#: ../jetpack-telegram.php:141
 msgid "More add-ons"
 msgstr ""
 
-#: ../jetpack-telegram.php:148
-#, php-format
+#: ../jetpack-telegram.php:155
 msgid ""
-"Like the plugin to share the Telegram Sharing Button for Jetpack? Develop "
-"free plugins takes work! Be my boss and make a <a target=\"_blank\" href="
-"\"%1$s\">donation of any amount</a>. | <a href=\"%2$s\">Hide Notice</a>"
+"Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins "
+"takes work! Be my boss and make a "
+msgstr ""
+
+#: ../jetpack-telegram.php:155
+msgid "donation of any amount"
+msgstr ""
+
+#: ../jetpack-telegram.php:155
+msgid "This plugin does not deserve a donation"
 msgstr ""
