@@ -62,6 +62,10 @@ The icon of Telegram only appears on smartphones and tablets devices.
 
 == Changelog ==
 
+= 1.1.3 - 06/10/2015 =
+
+* Fixed bugs in translate
+
 = 1.1.1 - 03/10/2015 =
 
 * Fixed errors in Cache Plugin
@@ -71,6 +75,10 @@ The icon of Telegram only appears on smartphones and tablets devices.
 * Initial Beta Release
 
 == Upgrade Notice ==
+
+= 1.1.3 - 06/10/2015 =
+
+* Fixed bugs in translate
 
 = 1.1.1 - 03/10/2015 =
 
