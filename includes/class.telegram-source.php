@@ -38,13 +38,13 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		$locale = $this->guess_locale_from_lang( get_locale() );
 			if( $this->smart )
 				return sprintf(
-					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s%s" class="share-telegram %s" title="%s"></a></div>',
+					'<div class="telegram_button"><a href="tg://msg?text=%s: %s - &url=%s%s" class="share-telegram %s" title="%s"></a></div>',
 					__('Look at this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
 					rawurlencode( '?utm_source=jetpack-sharing&utm_medium=telegram&utm_campaign=mobile' ),
 					esc_attr( $locale ),
-					esc_attr__( 'Telegram it!', 'jetpack-telegram' )
+					esc_attr__( 'Click to share on Telegram', 'jetpack-telegram' )
 				);
 			else
 				return $this->get_link( get_permalink( $post->ID ), _x( 'Telegram', 'share to', 'jetpack-telegram' ), __( 'Click to share on Telegram', 'jetpack-telegram' ), 'share=telegram' );
