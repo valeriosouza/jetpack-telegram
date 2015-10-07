@@ -38,10 +38,11 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		$locale = $this->guess_locale_from_lang( get_locale() );
 			if( $this->smart )
 				return sprintf(
-					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s?utm_source=jetpack-sharing%26utm_medium=telegram%26utm_campaign=mobile" class="share-telegram %s" title="%s"></a></div>',
+					'<div class="telegram_button"><a href="tg://msg?text=%s:%20%s%20-%20%s%s" class="share-telegram %s" title="%s"></a></div>',
 					__('Look at this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
+					rawurlencode( '?utm_source=jetpack-sharing&utm_medium=telegram&utm_campaign=mobile' ),
 					esc_attr( $locale ),
 					esc_attr__( 'Telegram it!', 'jetpack-telegram' )
 				);
