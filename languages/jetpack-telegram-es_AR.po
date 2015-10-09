@@ -1,10 +1,10 @@
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Telegram Sharing Button for Jetpack\n"
 "POT-Creation-Date: 2015-10-05 21:35-0300\n"
-"PO-Revision-Date: 2015-10-06 02:14+0000\n"
+"PO-Revision-Date: 2015-10-08 23:19-0300\n"
 "Last-Translator: Trasgo Furioso <trasgofurioso@gmail.com>\n"
 "Language-Team: Spanish (Argentina) (http://www.transifex.com/valeriosouza/telegram-sharing-button-for-jetpack/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: .\n"
 
-#: ../includes/class.telegram-source.php:20
-#: ../includes/class.telegram-source.php:49
+#: ../includes/class.telegram-source.php:20 ../includes/class.telegram-source.php:49
 msgid "Telegram"
 msgstr "Telegram"
 
-#: ../includes/class.telegram-source.php:42
-#: ../includes/class.telegram-source.php:68
+#: ../includes/class.telegram-source.php:42 ../includes/class.telegram-source.php:68
 msgid "Look at this"
 msgstr "Mirá esto"
 
@@ -33,9 +31,7 @@ msgid "Click to share on Telegram"
 msgstr "Hacé clic para compartir vía Telegram"
 
 #: ../jetpack-telegram.php:43
-msgid ""
-"Jetpack has NOT been activated! You need to install and activate the Jetpack"
-" plugin to work sharing with Telegram."
+msgid "Jetpack has NOT been activated! You need to install and activate the Jetpack plugin to work sharing with Telegram."
 msgstr "Jetpack NO está activado! Es necesario instalar y activar el plugin de Jetpack para poder compartir vía Telegram."
 
 #: ../jetpack-telegram.php:131
@@ -47,9 +43,7 @@ msgid "More add-ons"
 msgstr "Mas add-ons"
 
 #: ../jetpack-telegram.php:155
-msgid ""
-"Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins "
-"takes work! Be my boss and make a "
+msgid "Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a "
 msgstr "Te gusta el plugin Botón de Compartir vía SMS para Jetpack? Desarrollar plugins gratuitos toma trabajo. Se mi jefe y hacé una"
 
 #: ../jetpack-telegram.php:155
