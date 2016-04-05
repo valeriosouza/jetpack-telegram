@@ -71,10 +71,16 @@ class Jetpack_Telegram_Pack {
 	}
 
 	private function __construct() {
+
+		global $current_user ;
+	    $user_id = $current_user->ID;
+
 		add_action( 'wp_enqueue_scripts',    	array( &$this, 'register_assets' ) );
 		add_action( 'admin_enqueue_scripts', 	array( &$this, 'admin_menu_assets' ) );
-		add_action( 'admin_notices', 		 	array( &$this, 'plugin_donate_notice' ) );
-		add_action( 'admin_init', 			 	array( &$this, 'plugin_donate_ignore' ) );
+		if ( ! get_user_meta($user_id, 'telegram_ignore_notice') ) {
+			add_action( 'admin_notices', 		 array( &$this, 'plugin_donate_notice' ) );
+			add_action( 'admin_notices', 		 array( &$this, 'plugin_faq_notice' ) );
+		}
 		register_deactivation_hook( __FILE__,	array( &$this, 'update' ));
 
 		if( did_action('plugins_loaded') ) {
@@ -92,6 +98,15 @@ class Jetpack_Telegram_Pack {
 		delete_user_meta($user_id, 'telegram_ignore_notice');
 	}
 
+	static function remove_notice() {
+		global $current_user;
+	    $user_id = $current_user->ID;
+	    if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { 
+			add_user_meta($user_id, 'telegram_ignore_notice', '1');
+		}
+		die();
+	}
+
 	function register_assets() {
 		if( get_option('sharedaddy_disable_resources') ) {
 			return;
@@ -106,7 +121,11 @@ class Jetpack_Telegram_Pack {
 
 	function admin_menu_assets( $hook ) {
 		if( $hook == 'settings_page_sharing' ) {
-			wp_enqueue_style( 'jetpack-telegram', jetelegram__PLUGIN_URL . 'assets/css/style.css', array('sharing', 'sharing-admin'), jetelegram__VERSION );
+			wp_enqueue_style( 'jetpack-telegram', jetwhats__PLUGIN_URL . 'assets/css/style.css', array('sharing', 'sharing-admin'), jetwhats__VERSION );
+			wp_enqueue_script( 'jetpack-telegram', jetwhats__PLUGIN_URL . 'assets/js/main.js', array('jquery','sharing-js'), jetwhats__VERSION, true );
+			wp_localize_script( 'jetpack-telegram', 'remove_notice', array(
+				'ajax_url' => admin_url( 'admin-ajax.php' )
+			));
 		}
 	}
 
@@ -147,22 +166,14 @@ class Jetpack_Telegram_Pack {
 	/* Display a notice that can be dismissed */
 
 	function plugin_donate_notice() {
-		global $current_user ;
-	        $user_id = $current_user->ID;
-	        /* Check that the user hasn't already clicked to ignore the message */
-		if ( ! get_user_meta($user_id, 'telegram_ignore_notice') ) {
-	        echo '<div class="updated"><p>';
-	        printf('%s<a target="_blank" href="%s">%s</a>. | <a href="%s">%s</a>',__('Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a ', 'jetpack-telegram'), 'http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate-notice&utm_campaign=jetpack-telegram', __('donation of any amount', 'jetpack-telegram'), '?telegram_nag_ignore=0',__('This plugin does not deserve a donation', 'jetpack-telegram'));
+	        echo '<div class="notice notice-info notice-donate is-dismissible"><p>';
+	        printf('%s<a target="_blank" href="%s">%s</a>.',__('Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins takes work! Be my boss and make a ', 'jetpack-telegram'), 'http://wordlab.com.br/donate/?utm_source=plugin&utm_medium=donate-notice&utm_campaign=jetpack-telegram', __('donation of any amount', 'jetpack-telegram'));
 	        echo "</p></div>";
-		}
 	}
 
-	function plugin_donate_ignore() {
-		global $current_user;
-	        $user_id = $current_user->ID;
-	        /* If user clicks to ignore the notice, add that to their user meta */
-	        if ( isset($_GET['telegram_nag_ignore']) && '0' == $_GET['telegram_nag_ignore'] ) {
-	             add_user_meta($user_id, 'telegram_ignore_notice', 'true', true);
-		}
+	function plugin_faq_notice() {
+	        echo '<div class="notice notice-info notice-faq is-dismissible"><p>';
+	        printf('%s<a target="_blank" href="%s">%s</a>.',__('Button does not appear on the front end? ', 'jetpack-telegram'), 'https://wordpress.org/plugins/telegram-sharing-button-for-jetpack/faq/', __('Please, read the FAQ', 'jetpack-telegram'));
+	        echo "</p></div>";
 	}
 }

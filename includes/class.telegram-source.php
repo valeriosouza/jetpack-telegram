@@ -38,7 +38,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		$locale = $this->guess_locale_from_lang( get_locale() );
 			if( $this->smart )
 				return sprintf(
-					'<div class="telegram_button"><a href="tg://msg?text=%s: %s - &url=%s%s" class="share-telegram %s" title="%s"></a></div>',
+					'<div class="telegram_button"><a href="tg://msg?text=%s: %s - %s%s" class="share-telegram %s" title="%s"></a></div>',
 					__('Look at this','jetpack-telegram'),
 					rawurlencode( $this->get_share_title( $post->ID ) ),
 					rawurlencode( $this->get_share_url( $post->ID ) ),
@@ -66,8 +66,7 @@ class jetelegram_Share_Telegram extends Sharing_Source {
 		), $this->get_share_url( $post->ID ) );
 
 		$params = array(
-		    'text' => __( 'Look at this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ),
-		    'url'  => $url
+		    //'text' => __( 'Look at this', 'jetpack-telegram' ) . ': ' . $this->get_share_title( $post->ID ) . ' - '.$url,
 		);
 
 		$telegram_url = 'tg://msg?' . http_build_query( $params );
