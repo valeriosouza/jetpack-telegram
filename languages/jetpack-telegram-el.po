@@ -1,16 +1,17 @@
 # 
 # Translators:
+# Panagiotis Tabakis <tabakisp@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Telegram Sharing Button for Jetpack\n"
 "POT-Creation-Date: 2016-04-05 14:21-0300\n"
 "PO-Revision-Date: 2016-04-05 17:21+0000\n"
 "Last-Translator: Valério Souza <valeriosza@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (http://www.transifex.com/valeriosouza/telegram-sharing-button-for-jetpack/language/es_AR/)\n"
+"Language-Team: Greek (http://www.transifex.com/valeriosouza/telegram-sharing-button-for-jetpack/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-Basepath: .\n"
@@ -25,35 +26,35 @@ msgstr "Telegram"
 
 #: ../includes/class.telegram-source.php:42
 msgid "Look at this"
-msgstr "Mirá esto"
+msgstr "Ρίξε μια ματιά "
 
 #: ../includes/class.telegram-source.php:50
 msgid "Click to share on Telegram"
-msgstr "Hacé clic para compartir vía Telegram"
+msgstr "Κλικ για κοινοποίηση στο Telegram"
 
 #: ../jetpack-telegram.php:43
 msgid ""
 "Jetpack has NOT been activated! You need to install and activate the Jetpack"
 " plugin to work sharing with Telegram."
-msgstr "Jetpack NO está activado! Es necesario instalar y activar el plugin de Jetpack para poder compartir vía Telegram."
+msgstr "Το Jetpack ΔΕΝ έχει ενεργοποιηθεί! Θα πρέπει να εγκαταστήσετε και να ενεργοποιήσετε το πρόσθετο Jetpack για να λειτουργήσει η κοινοποίηση στο Telegram."
 
 #: ../jetpack-telegram.php:150
 msgid "Donate"
-msgstr "Donar"
+msgstr "Δωρεά"
 
 #: ../jetpack-telegram.php:160
 msgid "More add-ons"
-msgstr "Mas add-ons"
+msgstr "Περισσότερα πρόσθετα"
 
 #: ../jetpack-telegram.php:170
 msgid ""
 "Like the plugin Telegram Sharing Button for Jetpack? Develop free plugins "
 "takes work! Be my boss and make a "
-msgstr "Te gusta el plugin Botón de Compartir vía SMS para Jetpack? Desarrollar plugins gratuitos toma trabajo. Se mi jefe y hacé una"
+msgstr "Σου αρέσει το πρόσθετο Telegram Sharing Button για Jetpack; Η ανάπτυξη δωρεάν πρόσθετων απαιτεί δουλειά! Γίνε το αφεντικό μου και κάνε μια"
 
 #: ../jetpack-telegram.php:170
 msgid "donation of any amount"
-msgstr "donación de cualquier monto"
+msgstr "δωρεά οποιουδήποτε ποσού"
 
 #: ../jetpack-telegram.php:176
 msgid "Button does not appear on the front end? "
